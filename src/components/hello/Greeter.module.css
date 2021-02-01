@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital@1&family=Permanent+Marker&display=swap');
+#start {
+    color: #ffcdd2;
+}
+
+.standout {
+  color: white;
+  text-shadow: 3px 3px 4px #000000;
+  font-family: 'Permanent Marker', cursive;
+
+}
+
+.dampeace {
+    
+    filter: contrast(80%) opacity(60%);
+}
+
+.jobtitle {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    color: white;
+  text-shadow: 3px 3px 4px #000000;
+
+}
+
+.skillicons {
+    color: white;
+    text-shadow: 3px 3px 4px #000000;
+}
