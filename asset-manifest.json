@@ -1,26 +1,25 @@
 {
   "files": {
-    "main.css": "/site/static/css/main.a965cf7a.chunk.css",
-    "main.js": "/site/static/js/main.f55291eb.chunk.js",
-    "main.js.map": "/site/static/js/main.f55291eb.chunk.js.map",
+    "main.css": "/site/static/css/main.98156bc8.chunk.css",
+    "main.js": "/site/static/js/main.d6f5e0d9.chunk.js",
+    "main.js.map": "/site/static/js/main.d6f5e0d9.chunk.js.map",
     "runtime-main.js": "/site/static/js/runtime-main.b8bff95b.js",
     "runtime-main.js.map": "/site/static/js/runtime-main.b8bff95b.js.map",
-    "static/css/2.b758b25e.chunk.css": "/site/static/css/2.b758b25e.chunk.css",
-    "static/js/2.e7f38cfe.chunk.js": "/site/static/js/2.e7f38cfe.chunk.js",
-    "static/js/2.e7f38cfe.chunk.js.map": "/site/static/js/2.e7f38cfe.chunk.js.map",
+    "static/css/2.cc77c331.chunk.css": "/site/static/css/2.cc77c331.chunk.css",
+    "static/js/2.0e6e0367.chunk.js": "/site/static/js/2.0e6e0367.chunk.js",
+    "static/js/2.0e6e0367.chunk.js.map": "/site/static/js/2.0e6e0367.chunk.js.map",
     "index.html": "/site/index.html",
-    "static/css/2.b758b25e.chunk.css.map": "/site/static/css/2.b758b25e.chunk.css.map",
-    "static/css/main.a965cf7a.chunk.css.map": "/site/static/css/main.a965cf7a.chunk.css.map",
-    "static/js/2.e7f38cfe.chunk.js.LICENSE.txt": "/site/static/js/2.e7f38cfe.chunk.js.LICENSE.txt",
-    "static/media/dampeace.f3f52580.jpg": "/site/static/media/dampeace.f3f52580.jpg",
-    "static/media/hillbrow_tower.7d4e43da.jpg": "/site/static/media/hillbrow_tower.7d4e43da.jpg",
-    "static/media/thato.e85540d2.png": "/site/static/media/thato.e85540d2.png"
+    "static/css/2.cc77c331.chunk.css.map": "/site/static/css/2.cc77c331.chunk.css.map",
+    "static/css/main.98156bc8.chunk.css.map": "/site/static/css/main.98156bc8.chunk.css.map",
+    "static/js/2.0e6e0367.chunk.js.LICENSE.txt": "/site/static/js/2.0e6e0367.chunk.js.LICENSE.txt",
+    "static/media/dampeace.f53fdead.jpg": "/site/static/media/dampeace.f53fdead.jpg",
+    "static/media/thato.8044a091.jpg": "/site/static/media/thato.8044a091.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.b8bff95b.js",
-    "static/css/2.b758b25e.chunk.css",
-    "static/js/2.e7f38cfe.chunk.js",
-    "static/css/main.a965cf7a.chunk.css",
-    "static/js/main.f55291eb.chunk.js"
+    "static/css/2.cc77c331.chunk.css",
+    "static/js/2.0e6e0367.chunk.js",
+    "static/css/main.98156bc8.chunk.css",
+    "static/js/main.d6f5e0d9.chunk.js"
   ]
 }
