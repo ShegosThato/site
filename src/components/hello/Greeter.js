@@ -19,8 +19,8 @@ function Greeter() {
                         <h4 className={classes.jobtitle}>Software developer</h4>
                         <h4 className={classes.skillicons}><DiBootstrap /> <DiHtml5 /> <DiCss3 /> <DiJavascript /> <DiReact /> <DiFirebase /> <DiDjango /> <DiPostgresql /> <DiMongodb /> <DiGit /> <DiHeroku /></h4>
                     </div>
-                    <a href="https://drive.google.com/file/d/1_N2geRww1KyLfdAgXGbJ8iNrksWl_K4B/view?usp=sharing" rel="opener noreferrer" target="_blank" className="btn btn-outline-primary m-3">View CV <FaArrowCircleDown /></a>
-                    <a href="https://github.com/ShegosThato" rel="opener noreferrer" target="_blank" className="btn btn-outline-success m-3">Projects <GoProject /></a>
+                    <a href="https://drive.google.com/file/d/1_N2geRww1KyLfdAgXGbJ8iNrksWl_K4B/view?usp=sharing" rel="opener noreferrer" target="_blank" className="btn btn-light btn-sm mr-2">View CV <FaArrowCircleDown /></a>
+                    <a href="https://github.com/ShegosThato" rel="opener noreferrer" target="_blank" className="btn btn-light btn-sm ml-2">Projects <GoProject /></a>
 
                 </div>
             </div>
