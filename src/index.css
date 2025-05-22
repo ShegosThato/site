@@ -1,0 +1,12 @@
+body {
+    font-family: sans-serif;
+}
+.dark-mode-preload {
+    background-color: #111827;
+    color: #f3f4f6;
+}
+.transition-all {
+    transition-property: background-color, color, border-color, fill, stroke, opacity, box-shadow, transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+}

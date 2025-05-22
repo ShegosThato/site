@@ -1,0 +1,31 @@
+{
+  "name": "refactored-portfolio",
+  "version": "1.0.0",
+  "description": "A refactored portfolio website.",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "esbuild src/index.js --bundle --outfile=dist/bundle.js --loader:.js=jsx --jsx-factory=React.createElement --jsx-fragment=React.Fragment --format=esm --platform=browser",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShegosThato/site.git"
+  },
+  "keywords": ["portfolio", "react", "esbuild"],
+  "author": "ShegosThato",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShegosThato/site/issues"
+  },
+  "homepage": "https://github.com/ShegosThato/site#readme",
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.27.2",
+    "@babel/core": "^7.27.1",
+    "@babel/preset-react": "^7.27.1",
+    "esbuild": "^0.25.4"
+  }
+}
