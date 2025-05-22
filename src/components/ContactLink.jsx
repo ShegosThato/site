@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export const ContactLink = ({ href, IconComponent, title, text, darkMode, isEmail = false }) => (
+const OriginalContactLink = ({ href, IconComponent, title, text, darkMode, isEmail }) => (
     <a
         href={isEmail ? `mailto:${href}` : href}
         target={isEmail ? '_self' : '_blank'}
@@ -19,3 +20,18 @@ export const ContactLink = ({ href, IconComponent, title, text, darkMode, isEmai
         </div>
     </a>
 );
+
+OriginalContactLink.propTypes = {
+    href: PropTypes.string.isRequired,
+    IconComponent: PropTypes.elementType.isRequired,
+    title: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
+    darkMode: PropTypes.bool.isRequired,
+    isEmail: PropTypes.bool,
+};
+
+OriginalContactLink.defaultProps = {
+    isEmail: false,
+};
+
+export const ContactLink = React.memo(OriginalContactLink);

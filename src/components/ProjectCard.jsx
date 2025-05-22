@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Icons } from './Icons.jsx';
 
-export const ProjectCard = ({ project, darkMode }) => (
+const OriginalProjectCard = ({ project, darkMode }) => (
     <div className={`rounded-xl overflow-hidden transition-all hover:translate-y-[-4px] 
         ${darkMode ?
             'bg-gray-800 hover:shadow-lg hover:shadow-blue-900/20' :
@@ -32,3 +33,17 @@ export const ProjectCard = ({ project, darkMode }) => (
         </div>
     </div>
 );
+
+OriginalProjectCard.propTypes = {
+    project: PropTypes.shape({
+        id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+        title: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+        url: PropTypes.string.isRequired,
+        themeColor: PropTypes.string, // Optional, as it might not always be present
+    }).isRequired,
+    darkMode: PropTypes.bool.isRequired,
+};
+
+export const ProjectCard = React.memo(OriginalProjectCard);

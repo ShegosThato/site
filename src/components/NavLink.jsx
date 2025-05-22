@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export const NavLink = ({ section, activeSection, onClick, darkMode, children }) => (
+const OriginalNavLink = ({ section, activeSection, onClick, darkMode, children }) => (
     <button
         onClick={() => onClick(section)}
         className={`hover:text-blue-500 transition-colors ${activeSection === section ?
@@ -10,3 +11,13 @@ export const NavLink = ({ section, activeSection, onClick, darkMode, children })
         {children}
     </button>
 );
+
+OriginalNavLink.propTypes = {
+    section: PropTypes.string.isRequired,
+    activeSection: PropTypes.string.isRequired,
+    onClick: PropTypes.func.isRequired,
+    darkMode: PropTypes.bool.isRequired,
+    children: PropTypes.node.isRequired,
+};
+
+export const NavLink = React.memo(OriginalNavLink);

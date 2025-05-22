@@ -5,13 +5,17 @@
   "main": "src/index.js",
   "scripts": {
     "build": "esbuild src/index.js --bundle --outfile=dist/bundle.js --loader:.js=jsx --jsx-factory=React.createElement --jsx-fragment=React.Fragment --format=esm --platform=browser",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ShegosThato/site.git"
   },
-  "keywords": ["portfolio", "react", "esbuild"],
+  "keywords": [
+    "portfolio",
+    "react",
+    "esbuild"
+  ],
   "author": "ShegosThato",
   "license": "ISC",
   "bugs": {
@@ -19,13 +23,20 @@
   },
   "homepage": "https://github.com/ShegosThato/site#readme",
   "dependencies": {
+    "prop-types": "^15.8.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.27.2",
     "@babel/core": "^7.27.1",
+    "@babel/preset-env": "^7.27.2",
     "@babel/preset-react": "^7.27.1",
-    "esbuild": "^0.25.4"
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "babel-jest": "^29.7.0",
+    "esbuild": "^0.25.4",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
   }
 }

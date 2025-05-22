@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import useDarkMode from '../hooks/useDarkMode.js';
 import { Icons } from './Icons.jsx'; // For Sun, Moon, etc.
 import { NavLink } from './NavLink.jsx';
 import { MobileNavItem } from './MobileNavItem.jsx';
@@ -14,43 +15,17 @@ import { SECTIONS, YOUR_GITHUB_USERNAME, YOUR_LINKEDIN_PROFILE_NAME, YOUR_EMAIL 
 // Data is now imported
 
 export const ReimaginedProfile = () => {
-    const [darkMode, setDarkMode] = useState(() => {
-        const savedMode = localStorage.getItem('darkMode');
-        return savedMode ? JSON.parse(savedMode) :
-            window.matchMedia('(prefers-color-scheme: dark)').matches;
-    });
+    const [darkMode, toggleDarkMode] = useDarkMode();
     const [activeSection, setActiveSection] = useState(SECTIONS.HOME);
 
-    useEffect(() => {
-        const rootEl = document.documentElement;
-        if (darkMode) {
-            rootEl.classList.add('dark');
-            localStorage.setItem('darkMode', 'true');
-        } else {
-            rootEl.classList.remove('dark');
-            localStorage.setItem('darkMode', 'false');
-        }
-        // Ensure the class is removed from the #root child as well if it was added.
-        // This might have been added for the initial loading state.
-        const rootDivChild = document.getElementById('root')?.firstChild;
-        if (rootDivChild && typeof rootDivChild.classList !== 'undefined' && rootDivChild.classList.contains('dark-mode-preload')) {
-             rootDivChild.classList.remove('dark-mode-preload');
-        }
+    // The useEffect that managed localStorage and document.documentElement.classList
+    // is now handled by the useDarkMode hook.
 
-    }, [darkMode]);
+    // The useEffect for handling 'storage' event is removed for now,
+    // simplifying based on the assumption that the hook or component re-renders
+    // will cover most cases, or it can be re-evaluated if cross-tab sync is crucial.
 
-    useEffect(() => {
-        const handleStorageChange = (e) => {
-            if (e.key === 'darkMode') {
-                const newMode = localStorage.getItem('darkMode') === 'true';
-                if (newMode !== darkMode) setDarkMode(newMode);
-            }
-        };
-        window.addEventListener('storage', handleStorageChange);
-        return () => window.removeEventListener('storage', handleStorageChange);
-    }, [darkMode]); // Added darkMode to dependency array, was missing.
-
-    const toggleTheme = () => setDarkMode(!darkMode);
+    const toggleTheme = () => toggleDarkMode();
     const handleNavClick = (section) => setActiveSection(section);
 
     const GITHUB_PROFILE_URL = `https://github.com/${YOUR_GITHUB_USERNAME}`;
