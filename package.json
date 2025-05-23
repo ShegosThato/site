@@ -4,7 +4,7 @@
   "description": "A refactored portfolio website.",
   "main": "src/index.js",
   "scripts": {
-    "build": "esbuild src/index.js --bundle --outfile=dist/bundle.js --loader:.js=jsx --jsx-factory=React.createElement --jsx-fragment=React.Fragment --format=esm --platform=browser",
+    "build": "esbuild src/index.js --bundle --outfile=dist/bundle.js --loader:.js=jsx --jsx-factory=React.createElement --jsx-fragment=React.Fragment --format=esm --platform=browser --minify",
     "test": "jest"
   },
   "repository": {
