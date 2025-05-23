@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export const SkillCategoryDisplay = ({ category, darkMode }) => (
+const OriginalSkillCategoryDisplay = ({ category, darkMode }) => (
     <div className={`rounded-xl p-6 ${darkMode ? 'bg-gray-800' : 'bg-white border border-gray-200'}`}>
         <h3 className={`text-xl font-bold mb-4 ${category.color}`}>{category.category}</h3>
         <div className="flex flex-wrap gap-2">
@@ -13,3 +14,14 @@ export const SkillCategoryDisplay = ({ category, darkMode }) => (
         </div>
     </div>
 );
+
+OriginalSkillCategoryDisplay.propTypes = {
+    category: PropTypes.shape({
+        category: PropTypes.string.isRequired,
+        items: PropTypes.arrayOf(PropTypes.string).isRequired,
+        color: PropTypes.string, // Optional, as it might not always be present
+    }).isRequired,
+    darkMode: PropTypes.bool.isRequired,
+};
+
+export const SkillCategoryDisplay = React.memo(OriginalSkillCategoryDisplay);

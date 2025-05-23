@@ -1,7 +1,7 @@
 import React from 'react';
-import { Icons } from './Icons.jsx'; // As per instruction, though IconComponent is a prop
+import PropTypes from 'prop-types';
 
-export const MobileNavItem = ({ section, activeSection, onClick, darkMode, IconComponent, label }) => (
+const OriginalMobileNavItem = ({ section, activeSection, onClick, darkMode, IconComponent, label }) => (
     <button
         onClick={() => onClick(section)}
         className={`flex flex-col items-center p-2 rounded-md transition-colors w-1/4 
@@ -14,3 +14,14 @@ export const MobileNavItem = ({ section, activeSection, onClick, darkMode, IconC
         <span className="text-xs mt-1">{label}</span>
     </button>
 );
+
+OriginalMobileNavItem.propTypes = {
+    section: PropTypes.string.isRequired,
+    activeSection: PropTypes.string.isRequired,
+    onClick: PropTypes.func.isRequired,
+    darkMode: PropTypes.bool.isRequired,
+    IconComponent: PropTypes.elementType.isRequired,
+    label: PropTypes.string.isRequired,
+};
+
+export const MobileNavItem = React.memo(OriginalMobileNavItem);

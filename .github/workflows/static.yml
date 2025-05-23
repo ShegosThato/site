@@ -2,9 +2,9 @@
 name: Deploy static content to Pages
 
 on:
-  # Runs on pushes targeting the default branch
+  # Runs on pushes targeting the portfolio-improvements branch
   push:
-    branches: ["main"]
+    branches: ["portfolio-improvements"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -31,13 +31,32 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4 # Updated to v4 for latest features/security
+        with:
+          node-version: '20' # Using Node.js 20.x
+
+      - name: Install dependencies
+        run: npm ci # Using npm ci for cleaner installs in CI
+
+      - name: Build application
+        run: npm run build
+
+      - name: Prepare artifact directory
+        run: |
+          mkdir -p gh-pages-artifact/dist
+          cp public/index.html gh-pages-artifact/index.html
+          cp -r dist/* gh-pages-artifact/dist/
+          # If there are other static assets in public, copy them too. e.g.:
+          # cp public/favicon.ico gh-pages-artifact/
+          # cp public/manifest.json gh-pages-artifact/
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: '.'
+          path: './gh-pages-artifact' # Path to the directory containing deployment files
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
