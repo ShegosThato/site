@@ -2,9 +2,9 @@
 name: Deploy static content to Pages
 
 on:
-  # Runs on pushes targeting the portfolio-improvements branch
+  # Runs on pushes targeting the main branch
   push:
-    branches: ["portfolio-improvements"]
+    branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -43,14 +43,19 @@ jobs:
       - name: Build application
         run: npm run build
 
+      - name: Verify Build Output
+        run: ls -R dist/
+
       - name: Prepare artifact directory
         run: |
+          rm -rf gh-pages-artifact
           mkdir -p gh-pages-artifact/dist
           cp public/index.html gh-pages-artifact/index.html
-          cp -r dist/* gh-pages-artifact/dist/
-          # If there are other static assets in public, copy them too. e.g.:
-          # cp public/favicon.ico gh-pages-artifact/
-          # cp public/manifest.json gh-pages-artifact/
+          # Add any other specific assets from public if they were intended to be at the root
+          # For example: cp public/favicon.ico gh-pages-artifact/
+          cp dist/bundle.js gh-pages-artifact/dist/bundle.js 
+          echo "Artifact directory structure:"
+          ls -R gh-pages-artifact
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
